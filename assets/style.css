@@ -1,0 +1,92 @@
+
+/* Menu responsive */
+
+.navbar-light .navbar-toggler 
+{
+    width: 15%;
+    border-color: rgba(0,0,0,0);
+}
+li:hover
+{
+	/*color: rgb(92,184,92);*/
+	font-weight: bold;
+
+
+}
+/* 	Couleur text nav: ;		*/
+
+.navbar-dark .navbar-nav .nav-link 
+{
+    color: white;
+}
+/*	les entetes: */
+#entete
+{
+	background-image: url('images/alaska1.jpg');
+	background-size: cover;
+  	background-repeat: no-repeat;
+	height: 300px;
+}
+#entete h1
+{
+	padding-top: 60px;
+}
+#entete_ouvrages
+{
+	background-image: url('images/book.jpg');
+	background-size: cover;
+  	background-repeat: no-repeat;
+	height: 300px;
+	padding-top: 130px;
+}
+/*	Les images en générales et ouvrages: */
+.porto img
+{
+	max-width: 220px;
+}
+
+img
+{
+	width: 100%;
+	height:auto;
+}
+/* Taille formulaire de contact */
+.contact
+{
+	max-width: 60%;
+}
+footer img
+{
+	width: 50px;
+	margin-right: 5px;
+}
+footer li
+{
+	list-style-type: none;
+}
+@media (min-width: 768px)
+{
+	section
+	{
+		display: flex;
+		margin-bottom: 30px;
+	}
+	article
+	{
+		width: 75%;
+		padding-left: 20px;
+	}
+
+}
+@media (min-width: 992px)
+{
+	.navbar-expand-lg .navbar-collapse 
+	{
+    	justify-content: flex-end;
+	}
+	li
+	{
+		padding-right: 25px;
+	}
+
+}

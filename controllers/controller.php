@@ -1,23 +1,23 @@
-<? php
+<?php
 require ('models/model.php');
 
 function home()
 {
 	$posts = getPosts();
-	require('view/viewAcceuil.php');
+	require ('view/viewAcceuil.php');
 }
 
 function qui_suis_je()
 {
-	require('view/viewQuiSuisJe.php');
+	require ('view/viewQuiSuisJe.php');
 }
 
 function ouvrages()
 {
-	require('view/viewOuvrages.php');
+	require ('view/viewOuvrages.php');
 }
 
 function contact()
 {
-	require('view/viewContact.php');
+	require ('view/viewContact.php');
 }

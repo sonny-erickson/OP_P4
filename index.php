@@ -1,6 +1,6 @@
 <?php 
 
-require('controllers/controller.php');
+require ('controllers/controller.php');
 try
 {
 	if(isset($_GET['page']))
@@ -39,6 +39,6 @@ try
 catch(Exception $e) 
 { 
    $errorMessage = $e->getMessage();
-   require('view/viewError.php');
+   require ('view/viewError.php');
 }
 

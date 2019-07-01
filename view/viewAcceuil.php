@@ -10,13 +10,13 @@
     </div>
     <div class="container bg-secondary pt-3 pb-3 text-danger">
         <h2>CONTENU</h2>
-    <?php foreach ($posts as $post):
-    ?>
-        <div class="container-fluid">
-            <strong><?php echo  htmlspecialchars($donnees['titre']) ?></strong>
-            <?php echo htmlspecialchars($donnees['contenu'])  . ' : ' .htmlspecialchars($donnees['id']).' / le'.htmlspecialchars($donnees['date_created']). '</br>'; ?>
+        <div class="container">
+	        <h1 class="text-light text-center">Voici les articles</h1>
+	        <?php foreach ($posts as $post):?>
+	        <h4 class="text-warning border-top border-bottom"><strong><?= htmlspecialchars($post['title']); ?></strong></a> le <?= htmlspecialchars($post['date_created']); ?></h4>
+	        <p class="text-light text-justify"> <?= htmlspecialchars($post['content']); ?></p>
+	        <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
     </div>
         
     <?php $content = ob_get_clean(); ?>

@@ -8,5 +8,4 @@
 <?php   
 	require("require/footer.php"); 
     require("require/script.php"); 
-    require("models/model.php"); 
 ?>

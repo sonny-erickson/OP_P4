@@ -29,12 +29,12 @@ function postComment($postId, $author, $comment)
 	$result = $req -> execute(array($postId, $author, $comment));
 	return $result;
 }
-
 function dbConnect()
 {
     try
     {
         $db = new PDO('mysql:host=localhost;dbname=projetphp;charset=utf8', 'root', '');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $db;
     }
     catch(Exception $e)
@@ -42,3 +42,4 @@ function dbConnect()
         die('Erreur : '.$e->getMessage());
     }
 }
+

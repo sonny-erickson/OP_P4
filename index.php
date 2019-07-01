@@ -1,6 +1,6 @@
 <?php 
 
-require ('controllers/controller.php');
+require_once ('controllers/controller.php');
 try
 {
 	if(isset($_GET['page']))
@@ -32,6 +32,24 @@ try
 		else if($_GET['page'] === 'post')
 		{
 			post($_GET['id']);
+		}
+		else if($_GET['page'] === 'addComment')
+		{
+			if(isset($_GET['id']) && $_GET['id'] > 0)
+			{
+				if (!empty($_POST['author']) && (!empty($_POST['comment'])))
+				{
+					addcomment($_GET['id'], $_POST['author'], $_POST['comment']);
+				}
+				else
+				{
+					throw new Exception ("Erreur: champs non remplis");
+				}
+			}
+			else
+			{
+				throw new Exception ("ERREUR BILLETS");
+			}
 		}
 		// else if($_GET['page'] === "route")
 	    // {

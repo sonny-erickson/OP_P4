@@ -21,3 +21,11 @@ function contact()
 {
 	require ('view/viewContact.php');
 }
+function inscription()
+{
+	require ('view/viewInscription.php');
+}
+function connection()
+{
+	require ('view/viewConneection.php');
+}

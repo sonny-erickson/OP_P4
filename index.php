@@ -21,7 +21,14 @@ try
 		{
 			contact($_GET['id']);
 		}
-		
+		else if($_GET['page'] === 'inscription')
+		{
+			inscription();
+		}
+		else if($_GET['page'] === 'connection')
+		{
+			connection();
+		}
 		// else if($_GET['page'] === "route")
 	    // {
 	    //     controlleur();

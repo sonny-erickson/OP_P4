@@ -3,7 +3,7 @@
 <div class="container mt-4">
 	<h2 class="text-center text-warning mb-3 border-bottom">A propos de moi</h2>
 	<figure>
-    	<img src="/assets/images/oldman.jpg " alt="ecrivain" class="rounded-circle">
+    	<img src="assets/images/oldman.jpg " alt="ecrivain" class="rounded-circle">
     	<figcaption class="text-light text-center">Pendant mon voyage en Alaska..</figcaption>
     </figure>
     <aside class="mt-5 pb-3">
@@ -21,7 +21,7 @@
     </aside>
 </div>
 <?php $content = ob_get_clean(); ?>
-<?php require('view/gabarit.php'); ?>
+<?php require ('view/template.php'); ?>
         
   
 		

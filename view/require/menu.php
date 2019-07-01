@@ -13,21 +13,21 @@
                 <a class="nav-link" href="index.php">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="view/qui_suis_je.php">Qui suis-je</a>
+                <a class="nav-link" href="index.php?page=qui_suis_je">Qui suis-je</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="view/mes_ouvrages.php">Mes ouvrages</a>
+                <a class="nav-link" href="index.php?page=ouvrages">Mes ouvrages</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="view/contact.php">Contact</a>
+                <a class="nav-link" href="index.php?page=contact">Contact</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Espace membre
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-warning" href="view/inscription.php">S'INSCRIRE</a>
-                <a class="dropdown-item text-warning" href="view/connection.php">SE CONNECTER</a>
+                <a class="dropdown-item text-warning" href="index.php?page=inscription">S'INSCRIRE</a>
+                <a class="dropdown-item text-warning" href="index.php?page=connection">SE CONNECTER</a>
               </li>
             </ul>
           </div>

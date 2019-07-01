@@ -1,12 +1,36 @@
 <?php
-require ('models/model.php');
+require_once ('models/model.php');
 
 function home()
 {
 	$posts = getPosts();
 	require ('view/viewAcceuil.php');
 }
-
+function post($id)
+{
+	if (isset($id) && $id >0)
+	{
+		$post = getPost($id);
+		$comments = getComments($id);
+		require('view/viewPost.php');
+	}
+	else
+	{
+		echo 'Pas de commenataires ma gueule !';
+	}
+}
+function addcomment($postId, $author, $comment)
+{
+	$newComment = postComment($postId, $author, $comment);
+	if($newComment !== true)
+	{
+		throw new Exception ("ERRORRRRRR");
+	}
+	else
+	{
+		header('Location: index.php?page=post&id=' . $postId);
+	}
+}
 function qui_suis_je()
 {
 	require ('view/viewQuiSuisJe.php');
@@ -27,5 +51,5 @@ function inscription()
 }
 function connection()
 {
-	require ('view/viewConneection.php');
+	require ('view/viewConnection.php');
 }

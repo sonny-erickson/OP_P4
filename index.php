@@ -19,7 +19,7 @@ try
 		}
 		else if($_GET['page'] === 'contact')
 		{
-			contact($_GET['id']);
+			contact();
 		}
 		else if($_GET['page'] === 'inscription')
 		{
@@ -28,6 +28,10 @@ try
 		else if($_GET['page'] === 'connection')
 		{
 			connection();
+		}
+		else if($_GET['page'] === 'post')
+		{
+			post($_GET['id']);
 		}
 		// else if($_GET['page'] === "route")
 	    // {

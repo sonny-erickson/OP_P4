@@ -1,18 +1,41 @@
  <?php 
-     
 function getPosts()
 {
-    $bdd = bddConnect();
-    $req = $bdd->query('SELECT * FROM billets ORDER BY date_created');
+    $db = dbConnect();
+    $req = $db->query('SELECT * FROM billets ORDER BY date_created');
     $result = $req -> fetchAll();
     return $result;
 }
-function bddConnect()
+function getPost($postId)
+{
+	$db = dbConnect();
+	$req = $db-> prepare('SELECT * FROM billets WHERE id = ?');
+	$req -> execute(array($postId));
+	$result = $req -> fetch();
+    return $result;
+}
+function getComments($postId)
+{
+	$db = dbConnect();
+	$req = $db -> prepare('SELECT * FROM comments WHERE post_id = ? ORDER BY date_comment');
+	$req -> execute(array($postId));
+	$result = $req -> fetchAll();
+	return $result;
+}
+function postComment($postId, $author, $comment)
+{
+	$db = dbconnect();
+	$req = $db -> prepare('INSERT INTO comments(post_id, author, comment, date_comment) VALUES (?, ?, ?, NOW())');
+	$result = $req -> execute(array($postId, $author, $comment));
+	return $result;
+}
+
+function dbConnect()
 {
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=projetphp;charset=utf8', 'root', '');
-        return $bdd;
+        $db = new PDO('mysql:host=localhost;dbname=projetphp;charset=utf8', 'root', '');
+        return $db;
     }
     catch(Exception $e)
     {

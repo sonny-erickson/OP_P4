@@ -7,13 +7,13 @@
         <div class="row d-flex justify-content-center">
           <div class="form-group pb-2">
               <label for="exampleInputEmail1">Adresse Mail</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre identifiant">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre mail">
           </div>
         </div>
         <div class="row d-flex justify-content-center pb-3">
           <div class="form-group">
             <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez le mot de passe">
           </div>
         </div>
         <div class="row d-flex justify-content-center pb-3">
@@ -23,7 +23,7 @@
     </form>
     <div class="text-center">
       <p>
-        Toujours pas de compte ? <a href="view/inscription.php">Inscrivez-vous ici !</a>
+        Toujours pas de compte ? <a class='text-warning' href="view/inscription.php">Inscrivez-vous ici !</a>
       </p>
     </div>
   </div>

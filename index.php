@@ -1,6 +1,10 @@
 <?php 
+session_start();
 
 require_once ('controllers/controller.php');
+require_once ('controllers/controllerAuth.php');
+
+
 try
 {
 	if(isset($_GET['page']))

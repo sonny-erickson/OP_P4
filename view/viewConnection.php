@@ -1,7 +1,7 @@
 
 <?php  $title = "Connectez-vous"; ?>
 <?php ob_start(); ?>
-  <div class="container">
+  <div class="jumbotron">
     <h4 class="text-center pb-3 pt-5 ">CONNECTION</h4>
     <form class="text-center">
         <div class="row d-flex justify-content-center">
@@ -17,13 +17,13 @@
           </div>
         </div>
         <div class="row d-flex justify-content-center pb-3">
-          <button type="submit" class="btn btn-success btn-md
+          <button type="submit" class="btn btn-warning btn-md
           shadow rounded">Envoyer</button>
         </div>
     </form>
     <div class="text-center">
       <p>
-        Toujours pas de compte ? <a class='text-warning' href="view/inscription.php">Inscrivez-vous ici !</a>
+        Toujours pas de compte ? <a class='text-warning' href="index.php?page=inscription">Inscrivez-vous ici !</a>
       </p>
     </div>
   </div>

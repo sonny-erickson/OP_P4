@@ -2,19 +2,21 @@
 <?php ob_start(); ?>
 
 <div class="container text-light">
-<h4 class="text-warning border-top border-bottom"><strong><?= htmlspecialchars($post['title']); ?></strong></a> le <?= htmlspecialchars($post['date_created']); ?></h4>
-	        <p class="text-light text-justify"> <?= htmlspecialchars($post['content']); ?></p>
+	<h4 class="text-warning border-top border-bottom mt-5"><strong><?= htmlspecialchars($post['title']); ?></strong></a> le <?= htmlspecialchars($post['date_created']); ?></h4>
+	<p class="text-light text-justify"> <?= htmlspecialchars($post['content']); ?></p>
 	<a  class=" text-danger" href="index.php?page=home">Retour aux articles</a>
-	<h2 class="border-bottom">Commentaires</h2>
+	<h3 class="mt-5 mb-4">Commentaires :</h3>
 	<?php 
 	foreach ($comments as $comment) :
 	?>
-	<strong class="border-bottom"><?= htmlspecialchars($comment['author']);?> le <?= htmlspecialchars($comment['date_comment']);?></strong></br>
-	
-	<p class="text-justify border-bottom">
-		<?= htmlspecialchars($comment['comment']); ?>
-	</p>
+	<div class="jumbotron jumbotron-fluid text-dark p-2">
+		<h5><?= htmlspecialchars($comment['author']);?> le <?= htmlspecialchars($comment['date_comment']);?></h5>
+		<p class="text-justify">
+			<?= htmlspecialchars($comment['comment']); ?>
+		</p>
+	</div>
 	<?php endforeach; ?>
+	<h3 class="mt-5 mb-4">Pour laissez un commentaire :</h3>
 	<form action="index.php?page=addComment&amp;id=<?= $post['id'] ?>" method="post">
 	  <div class="form-group">
 	    <label for="author">Auteur</label>
@@ -24,7 +26,7 @@
 	    <label for="comment">Commentaire</label>
 	    <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
 	  </div>
-	  <button type="submit" class="btn btn-warning">Submit</button>
+	  <button type="submit" class="btn btn-warning mb-4">Submit</button>
 	</form>
 	
 </div>

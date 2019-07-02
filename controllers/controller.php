@@ -1,5 +1,6 @@
 <?php
 require_once ('models/model.php');
+require_once ('models/modelAuth.php');
 
 function home()
 {
@@ -44,10 +45,6 @@ function ouvrages()
 function contact()
 {
 	require ('view/viewContact.php');
-}
-function inscription()
-{
-	require ('view/viewInscription.php');
 }
 function connection()
 {

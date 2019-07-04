@@ -3,27 +3,35 @@
 <?php ob_start(); ?>
   <div class="jumbotron">
     <h4 class="text-center pb-3 pt-5 ">CONNECTION</h4>
-    <form class="text-center">
-        <div class="row d-flex justify-content-center">
-          <div class="form-group pb-2">
-              <label for="exampleInputEmail1">Adresse Mail</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre mail">
-          </div>
+    <?php 
+      
+      if(isset($message))
+    {
+      
+      echo '<div class="container alert alert-danger text-center" role="alert">'.$message.'</div>';
+    }
+    ?>
+    <form class="text-center" method="post" action="index.php?page=connectionSend">
+      <div class="row d-flex justify-content-center">
+        <div class="form-group pb-2">
+          <label for="exampleInputEmail1">Adresse Mail</label>
+          <input type="email" name="mailConnect"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre identifiant" >
         </div>
-        <div class="row d-flex justify-content-center pb-3">
-          <div class="form-group">
+      </div>
+      <div class="row d-flex justify-content-center pb-3">
+        <div class="form-group">
             <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez le mot de passe">
-          </div>
+            <input type="password" name="passConnect" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe" >
         </div>
-        <div class="row d-flex justify-content-center pb-3">
-          <button type="submit" class="btn btn-warning btn-md
+      </div>
+      <div class="row d-flex justify-content-center pb-3">
+        <button type="submit" name="formulConnect" class="btn btn-success btn-md
           shadow rounded">Envoyer</button>
-        </div>
+      </div>
     </form>
     <div class="text-center">
       <p>
-        Toujours pas de compte ? <a class='text-warning' href="index.php?page=inscription">Inscrivez-vous ici !</a>
+          Toujours pas de compte ? <a class="text-danger" href="index.php?page=inscription">Inscrivez-vous ici !</a>
       </p>
     </div>
   </div>

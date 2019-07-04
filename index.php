@@ -33,6 +33,10 @@ try
 		{
 			connection();
 		}
+		else if($_GET['page'] === 'connectionSend')
+		{
+			connectionSend();
+		}
 		else if($_GET['page'] === 'post')
 		{
 			post($_GET['id']);
@@ -53,6 +57,13 @@ try
 			else
 			{
 				throw new Exception ("ERREUR BILLETS");
+			}
+		}
+		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']))
+		{
+			if($_GET['page'] === 'profil')
+			{
+				profil();
 			}
 		}
 		// else if($_GET['page'] === "route")

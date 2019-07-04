@@ -1,6 +1,8 @@
 <?php
 require_once ('models/model.php');
 require_once ('models/modelAuth.php');
+require_once ('controllers/controllerAuth.php');
+
 
 function home()
 {
@@ -46,7 +48,7 @@ function contact()
 {
 	require ('view/viewContact.php');
 }
-function connection()
+function profil()
 {
-	require ('view/viewConnection.php');
+	require ('view/viewProfil.php');
 }

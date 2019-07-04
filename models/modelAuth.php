@@ -18,7 +18,6 @@ function emailCheckInsciption($email)
     return $result;
 }
 // add user
-// add user
 function addUser($pseudo, $pass_hache, $mail)
 {   
     $db = dbConnect();
@@ -27,4 +26,13 @@ function addUser($pseudo, $pass_hache, $mail)
                         'pass' => $pass_hache,
                         'email' => $mail));
       
+}
+// check email in bd
+function emailCheckConnection($mailConnect)
+{
+    $db = dbConnect();
+    $req = $db -> prepare ('SELECT * FROM member WHERE email = :email');
+    $req -> execute(array('email' => $mailConnect));
+    $result = $req -> fetch();
+    return $result;
 }

@@ -1,6 +1,8 @@
 <?php
 require_once ('models/model.php');
 require_once ('models/modelAuth.php');
+require_once ('controllers/controller.php');
+
 
 function inscription()
 {
@@ -54,10 +56,29 @@ function inscription()
         }
         else
         {
-        $erreur= 'Champs non remplies';
+        $erreur= 'Champs non remplis';
         }
     }
 require 'view/viewInscription.php';
+}
+function connection()
+{
+	if(isset($_GET['erreur']))
+	{
+		$erreur = $_GET['erreur'];
+		switch($erreur)
+		{
+			case 1 :
+			$message = "Erreur vous n'avez pas de compte"; break;
+			case 2 :
+			$message = "Tout les champs doivent être complétés"; break;
+
+
+			default:
+			$message = "Erreur inconnue";
+		}
+	}
+	require ('view/viewConnection.php');
 }
 
 function connectionSend()
@@ -68,31 +89,45 @@ function connectionSend()
         $passConnect = htmlspecialchars($_POST['passConnect']);   
         if(!empty($_POST['mailConnect']) AND !empty($_POST['passConnect']))
         {
-            emailCheckConnection($mailConnect);
+            $user = emailCheckConnection($mailConnect);
             // vérif le pass
-            $isPassCorrect = password_verify($_POST['passConnect'], $result['pass']);
-            if (!$result) 
+            
+            if (!$user) 
             {
-                $erreur='Erreur vous n\'avez pas de compte';
-                   
+                $erreur=1;
             }
             else
             {
+                $isPassCorrect = password_verify($_POST['passConnect'], $user['pass']);
                 if ($isPassCorrect)
-                    {
-                       $accept='welcome';
-                    }
+                {
+                    // blablabla sesion_start
+                    $_SESSION['id_member'] = $user['id_member'];
+                    $_SESSION['pseudo'] = $user['pseudo'];
+                }
                 else
-                    {
-                        $erreur = 'le mp !!';
-                        // blablabla sesion_start
-                    }
+                {
+                    $erreur =1;
+                }
             }
         }
         else
         {
-            $erreur = 'Tout les champs doivent être complétés';
+            $erreur =2;
+        }
+
+        if($erreur)
+        {
+            header("Location: index.php?page=connection&erreur=".$erreur);
+        }
+        else
+        {
+            header("Location: index.php?page=profil");
         }
     }
-require 'view/connectionView.php';
+
+}
+function erreur()
+{
+    
 }

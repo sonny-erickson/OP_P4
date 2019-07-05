@@ -125,9 +125,8 @@ function connectionSend()
             header("Location: index.php?page=profil");
         }
     }
-
 }
-function erreur()
+function deconnexion()
 {
-    
+    require ('view/viewDeco.php');
 }

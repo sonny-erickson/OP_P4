@@ -33,6 +33,10 @@ try
 		{
 			connection();
 		}
+		else if($_GET['page'] === 'deconnexion')
+		{
+			deconnexion();
+		}
 		else if($_GET['page'] === 'connectionSend')
 		{
 			connectionSend();
@@ -59,7 +63,7 @@ try
 				throw new Exception ("ERREUR BILLETS");
 			}
 		}
-		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']))
+		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND !empty($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
 		{
 			if($_GET['page'] === 'profil')
 			{

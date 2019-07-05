@@ -1,52 +1,43 @@
-<?php 
-require("view/require/head.php");
-require("view/require/menu.php");
-require("view/require/script.php"); 
-?>
-<body>
-	<div>
+<?php $title = 'Signalement'; ?>
+<?php ob_start() ?>
+    <div class="text-center">
+		<h1 class="mt-4">Page de modération</h1>
+		<p>Gestion des commentaires</p>
+	</div>
+	<div class="row">
 		<div class="container mt-4">
-			<button type="button" class="btn btn-success ">Add New</button>
-		</div>
-		<div class="container mt-4">
-			<table class="table">
+			<table class="table table-striped">
 			  <thead class=" white-text">
-			    <tr class="table-success">
-			      <th scope="col">#</th>
-			      <th scope="col">Title</th>
-			      <th scope="col">Content</th>
-			      <th scope="col">Date</th>
+			    <tr class="table-info">
+			      <th scope="col">Titre</th>
+			      <th scope="col">Commentaire</th>
+			      <th scope="col">Signalement</th>
 			      <th scope="col">Action</th>
-
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr>
-			      <th scope="row">1</th>
+			      <th scope="row">Blabla</th>
 			      <td>Mark</td>
 			      <td>Otto</td>
-			      <td>@mdo</td>
-			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm">Delete</button>
-			      </td>
-
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Jacob</td>
-			      <td>Thornton</td>
-			      <td>@fat</td>
 			      <td>
 			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
 					<button type="button" class="btn btn-danger btn-sm">Delete</button>
 			      </td>
 			    </tr>
 			    <tr>
-			      <th scope="row">3</th>
-			      <td>Larry</td>
-			      <td>the Bird</td>
-			      <td>@twitter</td>
+			      <th scope="row">Blabla</th>
+			      <td>Mark</td>
+			      <td>Otto</td>
+			      <td>
+			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
+					<button type="button" class="btn btn-danger btn-sm">Delete</button>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Blabla</th>
+			      <td>Mark</td>
+			      <td>Otto</td>
 			      <td>
 			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
 					<button type="button" class="btn btn-danger btn-sm">Delete</button>
@@ -55,6 +46,6 @@ require("view/require/script.php");
 			  </tbody>
 			</table>
 		</div>
-	</div>
-</body>
-		
+
+<?php $content = ob_get_clean() ?>
+<?php require 'templateAuth.php' ?>

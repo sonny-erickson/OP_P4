@@ -11,7 +11,7 @@ function home()
 }
 function post($id)
 {
-	if (isset($id) && $id >0)
+	if (isset($id) AND $id >0)
 	{
 		$post = getPost($id);
 		$comments = getComments($id);

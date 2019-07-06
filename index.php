@@ -3,6 +3,8 @@ session_start();
 
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
+require_once ('controllers/controllerAdmin.php');
+
 
 
 try
@@ -62,6 +64,18 @@ try
 			{
 				throw new Exception ("ERREUR BILLETS");
 			}
+		}
+		else if($_GET['page'] === 'admin')
+		{
+			admin();
+		}
+		else if($_GET['page'] === 'profil')
+		{
+			profil();
+		}
+		else if($_GET['page'] === 'signalement')
+		{
+			signalement();
 		}
 		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND !empty($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
 		{

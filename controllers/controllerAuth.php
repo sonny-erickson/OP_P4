@@ -126,6 +126,7 @@ function connectionSend()
         }
     }
 }
+
 function deconnexion()
 {
     require ('view/viewDeco.php');

@@ -48,7 +48,3 @@ function contact()
 {
 	require ('view/viewContact.php');
 }
-function profil()
-{
-	require ('view/viewProfil.php');
-}

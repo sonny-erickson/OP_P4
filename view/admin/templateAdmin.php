@@ -1,14 +1,14 @@
 <?php 
-	require("../require/head.php");
+	require ("view/require/head.php");
 ?>     
     <nav class="navbar navbar-light navbar-expand-lg border-bottom shadow" style="background-color: #e3f2fd;">
       <div class="container">
           <h5 class="font-weight-bold font-italic ">FORTEROCHE Jean</br><small>Auteur et écrivain</small></h5>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
-            <ul class="navbar-nav ">
+          <div class="collapse navbar-collapse " >
+            <ul class="navbar-nav d-flex ">
               <li class="nav-item mr-3">
                 <a class="nav-link" href="index.php">Retour sur le site</a>
               </li>
@@ -25,13 +25,13 @@
       <div class="col-sm-3 col-md-2 sidebar" style="background-color: #e3f2fd;">
         <ul class="navbar-nav ">
           <li class="nav-item border-bottom  text-center">
-            <a class="nav-link" href="index.php">Profil</a>
+            <a class="nav-link" href="index.php?page=profil">Profil</a>
           </li>
           <li class="nav-item border-bottom  text-center">
-            <a class="nav-link" href="index.php">Admin</a>
+            <a class="nav-link" href="index.php?page=admin">Admin</a>
           </li>
           <li class="nav-item border-bottom  text-center">
-            <a class="nav-link" href="index.php">Modération</a>
+            <a class="nav-link" href="index.php?page=signalement">Modération</a>
           </li>
           
         </ul>
@@ -43,5 +43,5 @@
   </div>
 </body>
 <?php   
-    require("../require/script.php"); 
+    require ("view/require/script.php"); 
 ?>

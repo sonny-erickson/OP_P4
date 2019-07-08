@@ -2,11 +2,10 @@
 <?php ob_start() ?>
 	<div class="text-center">
 		<h1 class="mt-4">Administration</h1>
-		<p>Bienvenue ..., ce blog contient ... articles et ... commentaires</p>
 	</div>
 	<div class="row">
 		<div class="container mt-4 text-center">
-			<button type="button" class="btn btn-success border-bottom">Nouvelle article</button>
+			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';>Nouvelle article</a></button>
 		</div>
 		<h3 class="ml-4 mt-5">Voici la listes des articles :</h3>
 		<div class="container mt-4">
@@ -15,53 +14,31 @@
 			    <tr class="table-info">
 			      <th scope="col">#</th>
 			      <th scope="col">Titre</th>
-			      <th scope="col">Contenue</th>
+			      <th scope="col">Contenu</th>
 			      <th scope="col">Date</th>
 				  <th scope="col">Nb commentaires</th>
 			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
+			  <?php foreach ($posts as $post):?>
+			  <?php $contentExtrait = htmlspecialchars(substr($post['content'],0,40));?>
 			  <tbody>
 			    <tr>
-			      <th scope="row">1</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>@mdo</td>
+			      <th><?= htmlspecialchars($post['id']); ?></th>
+			      <td><?= htmlspecialchars($post['title']); ?></td>
+			      <td><?= $contentExtrait; ?></td>
+			      <td> <?= htmlspecialchars($post['date_created']); ?></td>
 				  <td>@mdo</td>
-
-			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm">Delete</button>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Jacob</td>
-			      <td>Thornton</td>
-			      <td>@fat</td>
-				  <td>@mdo</td>
-
-			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm">Delete</button>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td>Larry</td>
-			      <td>the Bird</td>
-			      <td>@twitter</td>
-				  <td>@mdo</td>
-
 			      <td>
 			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
 					<button type="button" class="btn btn-danger btn-sm">Delete</button>
 			      </td>
 			    </tr>
 			  </tbody>
+			  <?php endforeach; ?>
 			</table>
 		</div>
 	</div>
 <?php $content = ob_get_clean() ?>
-<?php require 'templateAdmin.php' ?>
+<?php require 'templateAdmin.php'?>
 		

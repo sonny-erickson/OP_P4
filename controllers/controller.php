@@ -2,6 +2,8 @@
 require_once ('models/model.php');
 require_once ('models/modelAuth.php');
 require_once ('controllers/controllerAuth.php');
+require_once ('controllers/controllerAdmin.php');
+
 
 
 function home()

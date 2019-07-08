@@ -2,6 +2,8 @@
 require_once ('models/model.php');
 require_once ('models/modelAuth.php');
 require_once ('controllers/controller.php');
+require_once ('controllers/controllerAdmin.php');
+
 
 
 function inscription()

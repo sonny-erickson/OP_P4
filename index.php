@@ -69,6 +69,10 @@ try
 		{
 			admin();
 		}
+		else if($_GET['page'] === 'newArticle')
+		{
+			newArticle();
+		}
 		else if($_GET['page'] === 'profil')
 		{
 			profil();

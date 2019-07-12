@@ -4,6 +4,8 @@ require_once ('models/modelAuth.php');
 require_once ('models/modelAdmin.php');
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
+require_once ('controllers/controllerDelete.php');
+
 
 
 function profil()
@@ -26,16 +28,16 @@ function newArticle()
     if(isset($_POST['AddArticle']))    
     {
         $title = htmlspecialchars($_POST['titleArticle']);
-        $content = htmlspecialchars($_POST['contentArticle']);
+        $content = htmlentities($_POST['contentArticle']);
         if (!empty($_POST['titleArticle']) AND !empty($_POST['contentArticle']))
-
         {
             createPost($id, $title, $content,$date_created);
-            header("Location:index.php?page=admin");
+            $accept = "Article crée !";
+            header("Location:index.php?page=admin&accept=".$accept);
         }
         else
         {
-            echo "Champs non remplis..";
+            $erreur = "Champs non remplis..";
         }
     }
     require 'view/admin/newArticleView.php';

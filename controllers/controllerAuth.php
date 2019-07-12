@@ -3,6 +3,8 @@ require_once ('models/model.php');
 require_once ('models/modelAuth.php');
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAdmin.php');
+require_once ('controllers/controllerDelete.php');
+
 
 
 
@@ -74,18 +76,15 @@ function connection()
 			$message = "Erreur vous n'avez pas de compte"; break;
 			case 2 :
 			$message = "Tout les champs doivent être complétés"; break;
-
-
 			default:
 			$message = "Erreur inconnue";
 		}
 	}
 	require ('view/viewConnection.php');
 }
-
 function connectionSend()
 {
-    if(isset($_POST['formulConnect']))    
+    if(isset($_POST['formulConnect']))   
     {
         $mailConnect = htmlspecialchars($_POST['mailConnect']);
         $passConnect = htmlspecialchars($_POST['passConnect']);   
@@ -128,7 +127,6 @@ function connectionSend()
         }
     }
 }
-
 function deconnexion()
 {
     require ('view/viewDeco.php');

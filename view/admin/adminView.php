@@ -21,7 +21,7 @@
 			    </tr>
 			  </thead>
 			  <?php foreach ($posts as $post):?>
-			  <?php $contentExtrait = htmlspecialchars(substr($post['content'],0,40));?>
+			  <?php $contentExtrait = (substr(strip_tags(htmlentities($post['content'])),0,40));?>
 			  <tbody>
 			    <tr>
 			      <th><?= htmlspecialchars($post['id']); ?></th>
@@ -31,7 +31,7 @@
 				  <td>@mdo</td>
 			      <td>
 			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm">Delete</button>
+					<button type="button" class="btn btn-danger btn-sm"><a href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Delete</a></button>
 			      </td>
 			    </tr>
 			  </tbody>

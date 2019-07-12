@@ -25,7 +25,6 @@ function addUser($pseudo, $pass_hache, $mail)
     $req->execute(array('pseudo' => $pseudo,
                         'pass' => $pass_hache,
                         'email' => $mail));
-      
 }
 // check email in bd
 function emailCheckConnection($mailConnect)

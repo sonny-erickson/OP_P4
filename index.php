@@ -77,6 +77,10 @@ try
 		{
 			profil();
 		}
+		else if($_GET['page'] === 'deleteArticle')
+		{
+			deleteArticle($_GET['id']);
+		}
 		else if($_GET['page'] === 'signalement')
 		{
 			signalement();

@@ -7,6 +7,12 @@
 		<div class="container mt-4 text-center">
 			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';>Nouvelle article</a></button>
 		</div>
+		<?php 
+		if(isset($accept))
+		{
+			echo '<div class="container alert alert-success text-center" role="alert">'.$accept.'</div>';
+		}
+		?>
 		<h3 class="ml-4 mt-5">Voici la listes des articles :</h3>
 		<div class="container mt-4">
 			<table class="table table-striped">
@@ -31,7 +37,7 @@
 				  <td>@mdo</td>
 			      <td>
 			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm"><a href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Delete</a></button>
+					<button type="button" class="btn btn-danger btn-sm " onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Delete</a></button>
 			      </td>
 			    </tr>
 			  </tbody>

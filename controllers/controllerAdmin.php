@@ -32,8 +32,8 @@ function newArticle()
         if (!empty($_POST['titleArticle']) AND !empty($_POST['contentArticle']))
         {
             createPost($id, $title, $content,$date_created);
-            $accept = "Article crée !";
-            header("Location:index.php?page=admin&accept=".$accept);
+            header("Location:index.php?page=admin");
+            $accept="Article ajouté !";
         }
         else
         {

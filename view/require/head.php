@@ -12,7 +12,10 @@
 	  <?php endif ?>
 	  </title>
 	  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-  	  <script>tinymce.init({selector:'textarea'});</script>
+		<script>tinymce.init
+		({
+			selector:'#mytextarea',
+		});</script>
 	  <script type="text/javascript" src="assets/script.js"></script>
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="stylesheet" type="text/css" href="assets/style.css"/>

@@ -1,7 +1,7 @@
-<?php $title = 'Création billet'; ?>
+<?php $title = 'Modification billet'; ?>
 <?php ob_start() ?>
 <form class="mt-4" method="post" action="">
-    <h1 class="text-center mt-4">Nouvel article</h1>
+    <h1 class="text-center mt-4">Modification de l'article</h1>
     <?php if(isset($erreur))
     {
       echo '<div class="container alert alert-danger text-center" role="alert">'.$erreur.'</div>';

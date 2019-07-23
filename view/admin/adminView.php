@@ -5,7 +5,7 @@
 	</div>
 	<div class="row">
 		<div class="container mt-4 text-center">
-			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';>Nouvelle article</a></button>
+			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';>Nouvel article</a></button>
 		</div>
 		<?php 
 		if(isset($accept))

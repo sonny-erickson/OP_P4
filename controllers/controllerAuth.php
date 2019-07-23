@@ -92,7 +92,6 @@ function connectionSend()
         {
             $user = emailCheckConnection($mailConnect);
             // vérif le pass
-            
             if (!$user) 
             {
                 $erreur=1;

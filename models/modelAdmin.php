@@ -14,3 +14,14 @@ function deletePost($id)
 	$req -> execute(array($id));
 	return $result;
 }
+function editPost($id, $nvtitre, $nvcontent)
+{
+	$db = dbconnect();
+	$req = $db-> prepare('UPDATE billets SET title = :nvtitre, content = :nvcontent WHERE id = :id');
+	$req->execute(array(
+		'nvtitre' => $nvtitre,
+		'nvcontent' => $nvcontent,
+		'id' => $id
+		));
+}
+

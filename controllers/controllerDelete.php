@@ -8,11 +8,9 @@ require_once ('controllers/controllerAdmin.php');
 
 function deleteArticle($id)
 {
-    
     if(isset($id) AND !empty($id))  
     {
         deletePost($id);
         header("Location: index.php?page=admin&accept=".$accept);
-
     }  
 }

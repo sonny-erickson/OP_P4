@@ -4,6 +4,8 @@ require_once ('models/modelAuth.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerAdmin.php');
 require_once ('controllers/controllerDelete.php');
+require_once ('controllers/controllerEdit.php');
+
 
 
 

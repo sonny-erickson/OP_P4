@@ -5,6 +5,8 @@ require_once ('models/modelAdmin.php');
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerDelete.php');
+require_once ('controllers/controllerEdit.php');
+
 
 
 
@@ -28,7 +30,7 @@ function newArticle()
     if(isset($_POST['AddArticle']))    
     {
         $title = htmlspecialchars($_POST['titleArticle']);
-        $content = htmlentities($_POST['contentArticle']);
+        $content = htmlspecialchars_decode($_POST['contentArticle']);
         if (!empty($_POST['titleArticle']) AND !empty($_POST['contentArticle']))
         {
             createPost($id, $title, $content,$date_created);

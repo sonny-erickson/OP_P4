@@ -4,6 +4,7 @@ session_start();
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerAdmin.php');
+require_once ('controllers/controllerEdit.php');
 
 
 
@@ -11,6 +12,7 @@ try
 {
 	if(isset($_GET['page']))
 	{
+		var_dump($_GET['page']);
 		if($_GET['page'] === 'home')
 		{
 			home();
@@ -81,6 +83,15 @@ try
 		{
 			deleteArticle($_GET['id']);
 		}
+		else if($_GET['page'] === 'editArticle')
+		{
+			editArticle($_GET['id']);
+		}
+		else if($_GET['page'] === 'editArticleSend')
+		{
+			editArticleSend();
+		
+		}
 		else if($_GET['page'] === 'signalement')
 		{
 			signalement();
@@ -109,6 +120,7 @@ try
 catch(Exception $e) 
 { 
    $errorMessage = $e->getMessage();
+   var_dump($errorMessage);
    require ('view/viewError.php');
 }
 

@@ -14,7 +14,6 @@ function editArticle($id)
 }
 function editArticleSend()
 {
-    var_dump($_POST);
     extract($_POST);
     if(isset($AddArticle))   
     {

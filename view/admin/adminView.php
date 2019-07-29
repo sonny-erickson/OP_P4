@@ -22,19 +22,17 @@
 			      <th scope="col">Titre</th>
 			      <th scope="col">Contenu</th>
 			      <th scope="col">Date</th>
-				  <th scope="col">Nb commentaires</th>
 			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
 			  <?php foreach ($posts as $post):?>
-			  <?php $contentExtrait = (substr(strip_tags(htmlentities($post['content'])),0,40));?>
+			  <?php $contentExtrait = (substr(strip_tags(htmlentities($post['content'])),0,60));?>
 			  <tbody>
 			    <tr>
 			      <th><?= htmlspecialchars($post['id']); ?></th>
 			      <td><?= htmlspecialchars($post['title']); ?></td>
 			      <td><?= $contentExtrait; ?></td>
 			      <td> <?= htmlspecialchars($post['date_created']); ?></td>
-				  <td>@mdo</td>
 			      <td>
 			      	<button type="button" class="btn btn-primary btn-sm" ><a class="text-light" href="index.php?page=editArticle&amp;id=<?= $post['id']?>">Modifier</a></button>
 					<button type="button" class="btn btn-danger btn-sm " onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Effacer</a></button>

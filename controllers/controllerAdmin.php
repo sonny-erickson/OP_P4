@@ -4,11 +4,6 @@ require_once ('models/modelAuth.php');
 require_once ('models/modelAdmin.php');
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
-require_once ('controllers/controllerDelete.php');
-require_once ('controllers/controllerEdit.php');
-
-
-
 
 function profil()
 {
@@ -21,7 +16,12 @@ function admin()
 
 }
 function signalementAdmin()
-{
+{   
+    $comments = getComments($id);
+    if($signalement > 0)
+    {
+
+    }
     require 'view/admin/signalementAdminView.php';
 }
 
@@ -69,9 +69,9 @@ function editArticleSend()
             editPost($id, $titleArticle, $contentArticle);
             header("Location: index.php?page=admin&accept=".$accept);
         }
-    else 
-    {
-        echo "Errereur";
-    }
+        else 
+        {
+            echo "Errereur";
+        }
     }
 }

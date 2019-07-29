@@ -4,7 +4,7 @@ session_start();
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerAdmin.php');
-require_once ('controllers/controllerEdit.php');
+
 
 
 

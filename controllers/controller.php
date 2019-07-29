@@ -3,12 +3,6 @@ require_once ('models/model.php');
 require_once ('models/modelAuth.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerAdmin.php');
-require_once ('controllers/controllerDelete.php');
-require_once ('controllers/controllerEdit.php');
-
-
-
-
 
 function home()
 {
@@ -25,7 +19,7 @@ function post($id)
 	}
 	else
 	{
-		echo 'Pas de commenataires ma gueule !';
+		echo 'Pas de commentaires ma gueule !';
 	}
 }
 function addcomment($postId, $author, $comment)

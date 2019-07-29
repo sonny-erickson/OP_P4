@@ -24,4 +24,11 @@ function editPost($id, $nvtitre, $nvcontent)
 		'id' => $id
 		));
 }
-
+function signaléComments($postId)
+{
+	$db = dbConnect();
+	$req = $db-> prepare('SELECT * FROM comments WHERE post_id = ?');
+	$req -> execute(array($postId));
+	$result = $req -> fetch();
+	return $result;
+}

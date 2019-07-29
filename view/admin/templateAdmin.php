@@ -31,7 +31,7 @@
             <a class="nav-link" href="index.php?page=admin">Admin</a>
           </li>
           <li class="nav-item border-bottom  text-center">
-            <a class="nav-link" href="index.php?page=signalement">Modération</a>
+            <a class="nav-link" href="index.php?page=signalementAdmin">Modération</a>
           </li>
           
         </ul>

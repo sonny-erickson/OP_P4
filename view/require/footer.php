@@ -8,7 +8,7 @@
         <a href="#"><img src="assets/images/twitter-icon.png" alt="twitter"></a>
       </div>
     </div>
-    <p class="text-center text-light mb-0 pb-3 pt-3">Ce projet à été réalisé par Petot Sonny pour le projet 4 d'OpenClassroom - <a href="view/mentions_legales.php">Mentions légales - </a><a href="index.php?page=admin">Administration</a></p>
+    <p class="text-center text-light mb-0 pb-3 pt-3">Ce projet à été réalisé par Petot Sonny pour le projet 4 d'OpenClassroom - <a href="index.php?page=mention">Mentions légales - </a><a href="index.php?page=admin">Administration</a></p>
     </div>
   </div>
 </footer>

@@ -5,7 +5,7 @@
 	</div>
 	<div class="row">
 		<div class="container mt-4 text-center">
-			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';>Nouvel article</a></button>
+			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';> + Nouvel article</a></button>
 		</div>
 		<?php 
 		if(isset($accept))
@@ -36,8 +36,8 @@
 			      <td> <?= htmlspecialchars($post['date_created']); ?></td>
 				  <td>@mdo</td>
 			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm" ><a class="text-light" href="index.php?page=editArticle&amp;id=<?= $post['id']?>">Edit</a></button>
-					<button type="button" class="btn btn-danger btn-sm " onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Delete</a></button>
+			      	<button type="button" class="btn btn-primary btn-sm" ><a class="text-light" href="index.php?page=editArticle&amp;id=<?= $post['id']?>">Modifier</a></button>
+					<button type="button" class="btn btn-danger btn-sm " onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Effacer</a></button>
 			      </td>
 			    </tr>
 			  </tbody>

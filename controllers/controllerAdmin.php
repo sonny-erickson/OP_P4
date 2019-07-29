@@ -20,9 +20,9 @@ function admin()
     require 'view/admin/adminView.php';
 
 }
-function signalement()
+function signalementAdmin()
 {
-    require 'view/admin/signalementView.php';
+    require 'view/admin/signalementAdminView.php';
 }
 
 function newArticle()
@@ -43,4 +43,35 @@ function newArticle()
         }
     }
     require 'view/admin/newArticleView.php';
+}
+function deleteArticle($id)
+{
+    if(isset($id) AND !empty($id))  
+    {
+        deletePost($id);
+        header("Location: index.php?page=admin&accept=".$accept);
+    }  
+}
+
+function editArticle($id)
+{
+    extract($_GET);
+    $editArticle = getPost($id);
+    require ('view/admin/editView.php');
+}
+function editArticleSend()
+{
+    extract($_POST);
+    if(isset($AddArticle))   
+    {
+        if(isset($id) AND !empty($id))
+        {
+            editPost($id, $titleArticle, $contentArticle);
+            header("Location: index.php?page=admin&accept=".$accept);
+        }
+    else 
+    {
+        echo "Errereur";
+    }
+    }
 }

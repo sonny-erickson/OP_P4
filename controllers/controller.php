@@ -49,8 +49,21 @@ function ouvrages()
 {
 	require ('view/viewOuvrages.php');
 }
-
 function contact()
 {
 	require ('view/viewContact.php');
+}
+function mention()
+{
+	require ('view/viewMentionsLegales.php');
+}
+
+function signalé($id)
+{
+    extract($_POST);
+	if(isset($id) AND !empty($id)) 
+		{
+			signaléComm($id);
+			header("Location: index.php?page=post" . $comment['postId']);
+		}
 }

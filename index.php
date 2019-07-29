@@ -29,6 +29,10 @@ try
 		{
 			contact();
 		}
+		else if($_GET['page'] === 'mention')
+		{
+			mention();
+		}
 		else if($_GET['page'] === 'inscription')
 		{
 			inscription();
@@ -79,6 +83,10 @@ try
 		{
 			profil();
 		}
+		else if($_GET['page'] === 'signalementAdmin')
+		{
+			signalementAdmin();
+		}
 		else if($_GET['page'] === 'deleteArticle')
 		{
 			deleteArticle($_GET['id']);
@@ -89,12 +97,12 @@ try
 		}
 		else if($_GET['page'] === 'editArticleSend')
 		{
-			editArticleSend();
+			editArticleSend($_GET['id']);
 		
 		}
-		else if($_GET['page'] === 'signalement')
+		else if($_GET['page'] === 'signalé')
 		{
-			signalement();
+			signalé($_GET['id']);
 		}
 		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND !empty($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
 		{

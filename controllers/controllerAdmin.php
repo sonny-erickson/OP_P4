@@ -13,14 +13,13 @@ function admin()
 {
     $posts = getPosts();
     require 'view/admin/adminView.php';
-
 }
 function signalementAdmin()
 {   
     $comments = getComments($id);
     if($signalement > 0)
     {
-
+        signaléComments($postId);
     }
     require 'view/admin/signalementAdminView.php';
 }
@@ -52,7 +51,6 @@ function deleteArticle($id)
         header("Location: index.php?page=admin&accept=".$accept);
     }  
 }
-
 function editArticle($id)
 {
     extract($_GET);

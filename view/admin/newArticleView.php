@@ -10,7 +10,7 @@
       {
         echo '<div class="container alert alert-success text-center" role="alert">'.$accept.'</div>';
       }
-?>
+    ?>
     <div class="form-group">
         <label for="name">Titre de l'article</label>
         <input type="text" class="form-control mb-2" name="titleArticle" id="name" value="">

@@ -29,6 +29,12 @@ function postComment($postId, $author, $comment)
 	$result = $req -> execute(array($postId, $author, $comment));
 	return $result;
 }
+function signaléComm($id)
+{
+    $db = dbconnect();
+    $req = $db-> prepare('UPDATE comments SET signalement = signalement + 1 WHERE id = :id');
+    $req->execute(array('id' => $id));
+}
 function dbConnect()
 {
     try
@@ -42,10 +48,3 @@ function dbConnect()
         die('Erreur : '.$e->getMessage());
     }
 }
-function signaléComm($id)
-{
-    $db = dbconnect();
-    $req = $db-> prepare('UPDATE comments SET signalement = signalement + 1 WHERE id = :id');
-    $req->execute(array('id' => $id));
-}
-

@@ -3,10 +3,6 @@ require_once ('models/model.php');
 require_once ('models/modelAuth.php');
 require_once ('controllers/controller.php');
 
-
-
-
-
 function inscription()
 {
     if(isset($_POST['formulInscription']))    

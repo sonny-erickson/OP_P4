@@ -32,3 +32,19 @@ function signaléComments($postId)
 	$result = $req -> fetch();
 	return $result;
 }
+function approuverComment($post_id, $signalement)
+{
+	$db = dbconnect();
+	$req = $db-> prepare('UPDATE comments SET signalement = 0 WHERE post_id = :post_id');
+	$req->execute(array(
+		'signalement' => $signalement,
+		'post_id' => $post_id
+		));
+}
+function deleteComment($postId)
+{
+	$db = dbconnect();
+	$req = $db-> prepare('DELETE FROM comments WHERE post_id = ? LIMIT 1');
+	$req -> execute(array($postId));
+	return $result;
+}

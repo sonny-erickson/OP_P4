@@ -1,6 +1,4 @@
-<?php 
-	require ("view/require/head.php");
-?>     
+<?php require ("view/require/head.php"); ?>     
     <nav class="navbar navbar-light navbar-expand-lg border-bottom shadow" style="background-color: #e3f2fd;">
       <div class="container">
           <h5 class="font-weight-bold font-italic ">FORTEROCHE Jean</br><small>Auteur et écrivain</small></h5>
@@ -33,7 +31,6 @@
           <li class="nav-item border-bottom  text-center">
             <a class="nav-link" href="index.php?page=signalementAdmin">Modération</a>
           </li>
-          
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -42,6 +39,4 @@
     </div>
   </div>
 </body>
-<?php   
-    require ("view/require/script.php"); 
-?>
+<?php  require ("view/require/script.php"); ?>

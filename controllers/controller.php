@@ -19,20 +19,35 @@ function post($id)
 	}
 	else
 	{
-		echo 'Pas de commentaires ma gueule !';
+		echo 'Pas de commentaires !';
 	}
 }
 function addcomment($postId, $author, $comment)
 {
-	$newComment = postComment($postId, $author, $comment);
-	if($newComment !== true)
+	if(isset($postId) && $postId > 0)
 	{
-		throw new Exception ("ERRORRRRRR");
+		if (!empty($author) && (!empty($author)))
+		{
+			$newComment = postComment($postId, $author, $comment);
+			if($newComment !== true)
+			{
+				throw new Exception ("ERRORRRRRR");
+			}
+			else
+			{
+				header('Location: index.php?page=post&id=' . $postId);
+			}
+		}
+		else
+		{
+			throw new Exception ("Erreur: champs non remplis");
+		}
 	}
 	else
 	{
-		header('Location: index.php?page=post&id=' . $postId);
+		throw new Exception ("ERREUR BILLETS");
 	}
+	
 }
 function qui_suis_je()
 {
@@ -51,13 +66,16 @@ function mention()
 {
 	require ('view/viewMentionsLegales.php');
 }
-
-function signalé($id)
+function error()
+{
+	require ('view/viewError.php');
+}
+function signale($id, $postId)
 {
     extract($_POST);
 	if(isset($id) AND !empty($id)) 
 		{
-			signaléComm($id);
-			header("Location: index.php?page=post" . $comment['postId']);
+			signaleComm($id);
+			header("Location: index.php?page=post&id=" . $postId);
 		}
 }

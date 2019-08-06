@@ -1,11 +1,8 @@
 <?php 
 session_start();
-
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerAdmin.php');
-
-
 
 
 try
@@ -16,6 +13,10 @@ try
 		if($_GET['page'] === 'home')
 		{
 			home();
+		}
+		else if($_GET['page'] === 'post')
+		{
+			post($_GET['id']);
 		}
 		else if($_GET['page'] === 'qui_suis_je')
 		{
@@ -33,6 +34,16 @@ try
 		{
 			mention();
 		}
+		// Route du bouton signalé (comm +1)
+		else if($_GET['page'] === 'signale')
+		{
+			signale($_GET['id'], $_GET['postId']);
+		}
+		else if($_GET['page'] === 'error')
+		{
+			error();
+		}
+		// ----------------------------------------------------------> AUTH
 		else if($_GET['page'] === 'inscription')
 		{
 			inscription();
@@ -49,28 +60,11 @@ try
 		{
 			connectionSend();
 		}
-		else if($_GET['page'] === 'post')
-		{
-			post($_GET['id']);
-		}
 		else if($_GET['page'] === 'addComment')
 		{
-			if(isset($_GET['id']) && $_GET['id'] > 0)
-			{
-				if (!empty($_POST['author']) && (!empty($_POST['comment'])))
-				{
-					addcomment($_GET['id'], $_POST['author'], $_POST['comment']);
-				}
-				else
-				{
-					throw new Exception ("Erreur: champs non remplis");
-				}
-			}
-			else
-			{
-				throw new Exception ("ERREUR BILLETS");
-			}
+			addcomment($_GET['id'], $_POST['author'], $_POST['comment']);	
 		}
+		// ----------------------------------------------------------> ADMIN
 		else if($_GET['page'] === 'admin')
 		{
 			admin();
@@ -79,14 +73,20 @@ try
 		{
 			newArticle();
 		}
-		else if($_GET['page'] === 'profil')
-		{
-			profil();
-		}
+		//route affichage dans l'admin des commentaires 
 		else if($_GET['page'] === 'signalementAdmin')
 		{
 			signalementAdmin();
 		}
+		else if($_GET['page'] === 'approuverComm')
+		{
+			approuverComm($_GET['id'],$_POST['signalement']);
+		}
+		else if($_GET['page'] === 'deleteComm')
+		{
+			deleteComm($_GET['id']);
+		}
+		//Suppression article
 		else if($_GET['page'] === 'deleteArticle')
 		{
 			deleteArticle($_GET['id']);
@@ -98,12 +98,9 @@ try
 		else if($_GET['page'] === 'editArticleSend')
 		{
 			editArticleSend($_GET['id']);
+		}
 		
-		}
-		else if($_GET['page'] === 'signalé')
-		{
-			signalé($_GET['id']);
-		}
+		//Accés aux pages à  si et seulement si Connecté !!
 		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND !empty($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
 		{
 			if($_GET['page'] === 'profil')
@@ -129,6 +126,6 @@ catch(Exception $e)
 { 
    $errorMessage = $e->getMessage();
    var_dump($errorMessage);
-   require ('view/viewError.php');
+   require ("index.php?page=error");
 }
 

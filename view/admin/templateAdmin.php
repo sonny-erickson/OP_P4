@@ -21,10 +21,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" style="background-color: #e3f2fd;">
-        <ul class="navbar-nav ">
-          <li class="nav-item border-bottom text-center">
-            <a class="nav-link" href="index.php?page=profil">Profil</a>
-          </li>
+        <ul class="navbar-nav">
           <li class="nav-item border-bottom  text-center">
             <a class="nav-link" href="index.php?page=admin">Admin</a>
           </li>

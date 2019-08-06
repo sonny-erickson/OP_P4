@@ -12,40 +12,25 @@
 			      <th scope="col">Commentaire</th>
 			      <th scope="col">De</th>
 				  <th scope="col">Article n°</th>
-			      <th scope="col">Signalement</th>
 			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
+			  <?php 
+			  foreach ($comments as $comment) :
+			  ?>
 			  <tbody>
 			    <tr>
-			      <th scope="row"><?php= $title ?></th>
-			      <td><?php= $author?></td>
-				  <td><?php= $author?></td>
-			      <td><?php= $signalement ?></td>
+			      <th scope="row"><?= $comment['comment']; ?></th>
+			      <td><?= $comment['author']; ?></td>
+				  <td><?= $comment['post_id']; ?></td>
 			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm">Approuver</button>
-					<button type="button" class="btn btn-danger btn-sm">Effacer</button>
+			      	<button type="button" class="btn btn-primary btn-sm"><a class="text-light" href="index.php?page=approuverComm&amp;id=<?= $comment['id']?>">Approuver</a></button>
+					<button type="button" class="btn btn-danger btn-sm" onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteComm&amp;id=<?= $comment['id']?>">Effacer</a></button>
 			      </td>
 			    </tr>
 			    <tr>
-			      <th scope="row">Blabla</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm">Delete</button>
-			      </td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Blabla</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>
-			      	<button type="button" class="btn btn-primary btn-sm">Edit</button>
-					<button type="button" class="btn btn-danger btn-sm">Delete</button>
-			      </td>
-			    </tr>
 			  </tbody>
+			  <?php endforeach; ?>
 			</table>
 		</div>
 	</div>

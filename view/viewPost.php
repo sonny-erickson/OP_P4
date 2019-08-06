@@ -11,7 +11,7 @@
 	foreach ($comments as $comment) :
 	?>
 	<div class="jumbotron jumbotron-fluid text-dark p-2">
-		<h5 class="border-bottom"><?= htmlspecialchars($comment['author']);?> le <?= htmlspecialchars($comment['date_comment']);?><button type="submit" class="btn btn-outline-danger btn-sm ml-4"><a href="index.php?page=signalé&amp;id=<?= $comment['id']?>" class="text-dark">Signaler</a></button></h5>
+		<h5 class="border-bottom"><?= htmlspecialchars($comment['author']);?> le <?= htmlspecialchars($comment['date_comment']);?><button type="submit" class="btn btn-outline-danger btn-sm ml-4"><a href="index.php?page=signale&amp;id=<?= $comment['id']?>&amp;postId=<?= $post['id'] ?>" class="text-dark">Signaler</a></button></h5>
 		<p class="text-justify">
 			<?= htmlspecialchars($comment['comment']); ?>
 		</p>

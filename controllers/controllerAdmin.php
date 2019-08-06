@@ -16,11 +16,7 @@ function admin()
 }
 function signalementAdmin()
 {   
-    $comments = getComments($id);
-    if($signalement > 0)
-    {
-        signaléComments($postId);
-    }
+    $comments = signaleComments();
     require 'view/admin/signalementAdminView.php';
 }
 
@@ -65,11 +61,31 @@ function editArticleSend()
         if(isset($id) AND !empty($id))
         {
             editPost($id, $titleArticle, $contentArticle);
-            header("Location: index.php?page=admin&accept=".$accept);
+            header("Location: index.php?page=admin");
         }
         else 
         {
-            echo "Errereur";
+            echo "Erreur";
         }
     }
+}
+function approuverComm($id, $signalement)
+{
+        if(isset($id) AND !empty($id))
+        {
+            approuverComment($id, $signalement);
+            header("Location: index.php?page=signalementAdmin");
+        }
+}
+function deleteComm($id)
+{
+        if(isset($id) AND !empty($id))
+        {
+            deleteComment($id);
+            header("Location: index.php?page=signalementAdmin");
+        }
+        else
+        {
+            echo "erreur";
+        }
 }

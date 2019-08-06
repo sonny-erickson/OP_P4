@@ -1,5 +1,5 @@
 <?php
-
+// Le bouton nouvel article pour inserer dans la bdd le nouvel article
 function createPost($id, $title, $content,$date_created)
 {
 	$db = dbconnect();
@@ -7,6 +7,7 @@ function createPost($id, $title, $content,$date_created)
 	$result = $req -> execute(array($id, $title, $content));
 	return $result;
 }
+// Le bouton suppression de l'article
 function deletePost($id)
 {
 	$db = dbconnect();
@@ -14,6 +15,7 @@ function deletePost($id)
 	$req -> execute(array($id));
 	return $result;
 }
+// Le bouton édition de l'article
 function editPost($id, $nvtitre, $nvcontent)
 {
 	$db = dbconnect();
@@ -24,27 +26,29 @@ function editPost($id, $nvtitre, $nvcontent)
 		'id' => $id
 		));
 }
-function signaléComments($postId)
-{
+// Affichage des commentaires signalés dans la page admin
+function signaleComments()
+{	
 	$db = dbConnect();
-	$req = $db-> prepare('SELECT * FROM comments WHERE post_id = ?');
-	$req -> execute(array($postId));
-	$result = $req -> fetch();
+	$req = $db-> query('SELECT * FROM comments WHERE signalement != 0 ORDER BY post_id');
+	$result = $req -> fetchAll();
 	return $result;
 }
-function approuverComment($post_id, $signalement)
+// Le bouton approuver pour remettre les commentaires signalés à 0
+function approuverComment($id, $signalement)
 {
 	$db = dbconnect();
-	$req = $db-> prepare('UPDATE comments SET signalement = 0 WHERE post_id = :post_id');
+	$req = $db-> prepare('UPDATE comments SET signalement = 0 WHERE id = :id');
 	$req->execute(array(
 		'signalement' => $signalement,
-		'post_id' => $post_id
+		'id' => $id
 		));
 }
-function deleteComment($postId)
+// Le bouton pour supprimer le commentaire signalé
+function deleteComment($id)
 {
 	$db = dbconnect();
-	$req = $db-> prepare('DELETE FROM comments WHERE post_id = ? LIMIT 1');
-	$req -> execute(array($postId));
+	$req = $db-> prepare('DELETE FROM comments WHERE id = ? LIMIT 1');
+	$req -> execute(array($id));
 	return $result;
 }

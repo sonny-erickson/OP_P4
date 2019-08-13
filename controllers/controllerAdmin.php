@@ -69,11 +69,11 @@ function editArticleSend()
         }
     }
 }
-function approuverComm($id, $signalement)
+function approuverComm($id)
 {
         if(isset($id) AND !empty($id))
         {
-            approuverComment($id, $signalement);
+            approuverComment($id);
             header("Location: index.php?page=signalementAdmin");
         }
 }

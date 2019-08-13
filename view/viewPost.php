@@ -4,7 +4,7 @@
 <div class="container text-light ">
 	<h4 class="text-warning border-top border-bottom mt-5"><strong><?= htmlspecialchars($post['title']); ?></strong></a> le <?= htmlspecialchars($post['date_created']); ?></h4>
 	<img src="assets/images/articleimg.jpg" alt="articleimg">
-	<p class="text-light text-justify mt-4"> <?= htmlspecialchars($post['content']); ?></p>
+	<p class="text-light text-justify mt-4"> <?= ($post['content']); ?></p>
 	<a  class=" text-danger" href="index.php?page=home">Retour aux articles</a>
 	<h3 class="mt-5 mb-4">Commentaires :</h3>
 	<?php 

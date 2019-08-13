@@ -17,9 +17,10 @@
 		({
 			selector:'#mytextarea',
 			language:'fr_FR',
+			entity_encoding : "raw",
 			forced_root_block : false,
             force_br_newlines : true,
-            force_p_newlines : false
+            force_p_newlines : false,
 		});
 	  </script>
 	  <script type="text/javascript" src="assets/script.js"></script>

@@ -80,7 +80,7 @@ try
 		}
 		else if($_GET['page'] === 'approuverComm')
 		{
-			approuverComm($_GET['id'],$_POST['signalement']);
+			approuverComm($_GET['id']);
 		}
 		else if($_GET['page'] === 'deleteComm')
 		{

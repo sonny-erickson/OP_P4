@@ -35,12 +35,11 @@ function signaleComments()
 	return $result;
 }
 // Le bouton approuver pour remettre les commentaires signalés à 0
-function approuverComment($id, $signalement)
+function approuverComment($id)
 {
 	$db = dbconnect();
 	$req = $db-> prepare('UPDATE comments SET signalement = 0 WHERE id = :id');
 	$req->execute(array(
-		'signalement' => $signalement,
 		'id' => $id
 		));
 }

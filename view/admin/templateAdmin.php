@@ -2,20 +2,7 @@
     <nav class="navbar navbar-light navbar-expand-lg border-bottom shadow" style="background-color: #e3f2fd;">
       <div class="container">
           <h5 class="font-weight-bold font-italic ">FORTEROCHE Jean</br><small>Auteur et écrivain</small></h5>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse " >
-            <ul class="navbar-nav d-flex ">
-              <li class="nav-item mr-3">
-                <a class="nav-link" href="index.php">Retour sur le site</a>
-              </li>
-              <li class="nav-item ml-3 ">
-              <a href ="index.php?page=deconnexion"><button type="button" class="btn btn-danger ">Déconnexion</button></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      </div>
     </nav>
 <body class="bg-light">
   <div class="container-fluid">
@@ -27,6 +14,12 @@
           </li>
           <li class="nav-item border-bottom  text-center">
             <a class="nav-link" href="index.php?page=signalementAdmin">Modération</a>
+          </li>
+          <li class="nav-item border-bottom  text-center ">
+                <a class="nav-link" href="index.php">Retour sur le site</a>
+          </li>
+          <li class="nav-item border-bottom  text-center ">
+            <a href ="index.php?page=deconnexion" class="nav-link text-danger">Déconnexion</a>
           </li>
         </ul>
       </div>

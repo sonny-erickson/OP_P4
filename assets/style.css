@@ -10,11 +10,8 @@ li:hover
 {
 	/*color: rgb(92,184,92);*/
 	font-weight: bold;
-
-
 }
 /* 	Couleur text nav: ;		*/
-
 .navbar-dark .navbar-nav .nav-link 
 {
     color: white;
@@ -27,9 +24,9 @@ li:hover
   	background-repeat: no-repeat;
 	height: 300px;
 }
-#entete h1
+#titlePosition
 {
-	padding-top: 12.5%;
+	padding-top: 25%;
 }
 #entete_ouvrages
 {
@@ -40,7 +37,6 @@ li:hover
 	padding-top: 130px;
 }
 /*	Les images en générales et ouvrages: */
-
 .porto img
 {
 	max-width: 220px;
@@ -68,8 +64,25 @@ footer li
 {
 	margin-bottom: 0;
 }
+/* Admin side */
+#adminButton
+{
+	width: 63px;
+	height: 30px;
+	font-size: 10px;
+}
+.table
+{
+	font-size: 12px;
+}
 @media (min-width: 768px)
 {
+	/* Page acceuil*/
+	#titlePosition
+{
+	padding-top: 16%;
+}
+/* MES OUVRAGES */
 	section
 	{
 		display: flex;
@@ -80,7 +93,21 @@ footer li
 		width: 75%;
 		padding-left: 20px;
 	}
-
+	/* Admin table*/
+	.table td, .table th
+	 {
+		padding: 7px;
+	 }
+	 #adminButton
+{
+	width: 84px;
+	height: 30px;
+	font-size: 12px;
+}
+.table
+{
+	font-size: 15px;
+}
 }
 @media (min-width: 992px)
 {

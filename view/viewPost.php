@@ -1,6 +1,5 @@
 <?php $title = 'ONE article'; ?>
 <?php ob_start(); ?>
-
 <div class="container text-light ">
 	<h4 class="text-warning border-top border-bottom mt-5"><strong><?= htmlspecialchars($post['title']); ?></strong></a> le <?= htmlspecialchars($post['date_created']); ?></h4>
 	<img src="assets/images/articleimg.jpg" alt="articleimg">
@@ -17,6 +16,7 @@
 		</p>
 	</div>
 	<?php endforeach; ?>
+	<?php if(isset($_SESSION['id_member'])){ ?>
 	<h3 class="mt-5 mb-4">Pour laissez un commentaire :</h3>
 	<form action="index.php?page=addComment&amp;id=<?= $post['id'] ?>" method="post">
 	  <div class="form-group">
@@ -29,7 +29,7 @@
 	  </div>
 	  <button type="submit" class="btn btn-warning mb-4">Submit</button>
 	</form>
-	
+	<?php } ?>
 </div>
 <?php $content = ob_get_clean(); ?>
 <?php require 'view/template.php';?>

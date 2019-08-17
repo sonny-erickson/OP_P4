@@ -28,10 +28,22 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item text-warning" href="index.php?page=inscription">S'INSCRIRE</a>
                 <a class="dropdown-item text-warning" href="index.php?page=connection">SE CONNECTER</a>
+                <a class="dropdown-item text-danger" href="index.php?page=deconnexion">DECONNEXION</a>
               </li>
             </ul>
           </div>
         </div>
-    </nav>
+    </nav>		
+    <?php if(isset($_SESSION['id_member']) AND ($_SESSION['rang']== 0))
+    { ?>
+            <div class="container-fluid bg-warning text-center"> Bienvenue <?= $_SESSION['pseudo'] ?>. Vous êtes connecté, vous pouvez commenté</div>
+    <?php 
+    } ?>
+    <?php if(isset($_SESSION['id_member']) AND ($_SESSION['rang']== 1))
+    { ?>
+            <div class="container-fluid bg-warning text-center"> Bienvenue ADMIN</div>
+    <?php 
+    } ?>
+    
   </div>  
 </header>

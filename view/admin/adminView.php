@@ -5,7 +5,7 @@
 	</div>
 	<div class="row">
 		<div class="container mt-4 text-center">
-			<button type="button" class="btn btn-success border-bottom"><a href='index.php?page=newArticle' class='text-light';> + Nouvel article</a></button>
+			<a class="btn btn-success border-bottom text-light" href='index.php?page=newArticle'> + Nouvel article</a>
 		</div>
 		<h3 class="ml-4 mt-5">Voici la listes des articles :</h3>
 		<div class="container mt-4">

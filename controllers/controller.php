@@ -47,7 +47,6 @@ function addcomment($postId, $author, $comment)
 	{
 		throw new Exception ("ERREUR BILLETS");
 	}
-	
 }
 function qui_suis_je()
 {

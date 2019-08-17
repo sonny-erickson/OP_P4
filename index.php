@@ -43,7 +43,7 @@ try
 		{
 			error();
 		}
-		// ----------------------------------------------------------> AUTH
+		// --------------------------> AUTH
 		else if($_GET['page'] === 'inscription')
 		{
 			inscription();
@@ -64,58 +64,54 @@ try
 		{
 			addcomment($_GET['id'], $_POST['author'], $_POST['comment']);	
 		}
-		// ----------------------------------------------------------> ADMIN
-		else if($_GET['page'] === 'admin')
-		{
-			admin();
-		}
-		else if($_GET['page'] === 'newArticle')
-		{
-			newArticle();
-		}
-		//route affichage dans l'admin des commentaires 
-		else if($_GET['page'] === 'signalementAdmin')
-		{
-			signalementAdmin();
-		}
-		else if($_GET['page'] === 'approuverComm')
-		{
-			approuverComm($_GET['id']);
-		}
-		else if($_GET['page'] === 'deleteComm')
-		{
-			deleteComm($_GET['id']);
-		}
-		//Suppression article
-		else if($_GET['page'] === 'deleteArticle')
-		{
-			deleteArticle($_GET['id']);
-		}
-		else if($_GET['page'] === 'editArticle')
-		{
-			editArticle($_GET['id']);
-		}
-		else if($_GET['page'] === 'editArticleSend')
-		{
-			editArticleSend($_GET['id']);
-		}
 		
 		//Accés aux pages à  si et seulement si Connecté !!
 		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND !empty($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
 		{
-			if($_GET['page'] === 'profil')
+			if ($_SESSION['rang'] == 1)
 			{
-				profil();
-			}
+
+						// ------------------------------> ADMIN
+						if($_GET['page'] === 'admin')
+						{
+							admin();
+						}
+						else if($_GET['page'] === 'newArticle')
+						{
+							newArticle();
+						}
+						//route affichage dans l'admin des commentaires 
+						else if($_GET['page'] === 'signalementAdmin')
+						{
+							signalementAdmin();
+						}
+						else if($_GET['page'] === 'approuverComm')
+						{
+							approuverComm($_GET['id']);
+						}
+						else if($_GET['page'] === 'deleteComm')
+						{
+							deleteComm($_GET['id']);
+						}
+						//Suppression article
+						else if($_GET['page'] === 'deleteArticle')
+						{
+							deleteArticle($_GET['id']);
+						}
+						else if($_GET['page'] === 'editArticle')
+						{
+							editArticle($_GET['id']);
+						}
+						else if($_GET['page'] === 'editArticleSend')
+						{
+							editArticleSend($_GET['id']);
+						}
+			}		
 		}
 		// else if($_GET['page'] === "route")
 	    // {
 	    //     controlleur();
 	    // }
-		else
-		{
-			home();
-		}
 	}
 	else
 		{

@@ -96,9 +96,9 @@ function connectionSend()
                 $isPassCorrect = password_verify($_POST['passConnect'], $user['pass']);
                 if ($isPassCorrect)
                 {
-                    // blablabla sesion_start
                     $_SESSION['id_member'] = $user['id_member'];
                     $_SESSION['pseudo'] = $user['pseudo'];
+                    $_SESSION['rang'] = $user['rang'];
                 }
                 else
                 {
@@ -117,7 +117,7 @@ function connectionSend()
         }
         else
         {
-            header("Location: index.php?page=profil");
+            header("Location: index.php?page=home");
         }
     }
 }

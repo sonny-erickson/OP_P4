@@ -21,7 +21,7 @@
       <div class="row d-flex justify-content-center pb-3">
         <div class="form-group">
             <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" name="passConnect" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe" >
+            <input type="password" name="passConnect" class="form-control" id="exampleInputPassword1" placeholder="Entrez le mot de passe" >
         </div>
       </div>
       <div class="row d-flex justify-content-center pb-3">

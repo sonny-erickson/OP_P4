@@ -44,6 +44,5 @@
             <div class="container-fluid bg-warning text-center"> Bienvenue ADMIN</div>
     <?php 
     } ?>
-    
   </div>  
 </header>

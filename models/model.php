@@ -1,51 +1,43 @@
  <?php 
-function getPosts()
-{
-    $db = dbConnect();
-    $req = $db->query('SELECT * FROM billets ORDER BY date_created');
-    $result = $req -> fetchAll();
-    return $result;
-}
-function getPost($postId)
-{
-	$db = dbConnect();
-	$req = $db-> prepare('SELECT * FROM billets WHERE id = ?');
-	$req -> execute(array($postId));
-	$result = $req -> fetch();
-    return $result;
-}
-function getComments($postId)
-{
-	$db = dbConnect();
-	$req = $db -> prepare('SELECT * FROM comments WHERE post_id = ? ORDER BY date_comment');
-	$req -> execute(array($postId));
-	$result = $req -> fetchAll();
-	return $result;
-}
-function postComment($postId, $author, $comment)
-{
-	$db = dbconnect();
-	$req = $db -> prepare('INSERT INTO comments(post_id, author, comment, date_comment) VALUES (?, ?, ?, NOW())');
-	$result = $req -> execute(array($postId, $author, $comment));
-	return $result;
-}
-function signaleComm($id)
-{
-    $db = dbconnect();
-    $req = $db-> prepare('UPDATE comments SET signalement = signalement + 1 WHERE id = :id');
-    $req->execute(array('id' => $id));
-}
-function dbConnect()
-{
-    try
+
+    class Model extends Manager
     {
-        $db = new PDO('mysql:host=localhost;dbname=projetphp;charset=utf8', 'root', '');
-        // Code les caractères
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $db;
+        public function getPosts()
+        {
+            $db = $this -> dbConnect();
+            $req = $db->query('SELECT * FROM billets ORDER BY date_created');
+            $result = $req -> fetchAll();
+            return $result;
+        }
+        public function getPost($postId)
+        {
+            $db = $this -> dbConnect();
+            $req = $db-> prepare('SELECT * FROM billets WHERE id = ?');
+            $req -> execute(array($postId));
+            $result = $req -> fetch();
+            return $result;
+        }
+        public function getComments($postId)
+        {
+            $db = $this -> dbConnect();
+            $req = $db -> prepare('SELECT comments.*, member.pseudo FROM comments INNER JOIN member ON member.id_member = comments.member_id WHERE post_id = ? ORDER BY date_comment, id');
+            $req -> execute(array($postId));
+            $result = $req -> fetchAll();
+            return $result;
+        }
+        public function postComment($postId, $comment, $id_member)
+        {
+            $db = $this -> dbConnect();
+            $req = $db -> prepare('INSERT INTO comments(post_id, comment, date_comment, member_id) VALUES (?, ?, NOW(), ?)');
+            $result = $req -> execute(array($postId, $comment, $id_member));
+            return $result;
+        }
+        public function signaleComm($id)
+        {
+            $db = $this -> dbConnect();
+            $req = $db-> prepare('UPDATE comments SET signalement = signalement + 1 WHERE id = :id');
+            $req->execute(array('id' => $id));
+        }
+
+
     }
-    catch(Exception $e)
-    {
-        die('Erreur : '.$e->getMessage());
-    }
-}

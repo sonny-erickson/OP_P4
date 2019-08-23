@@ -1,11 +1,8 @@
 <?php
-require_once ('models/model.php');
-require_once ('models/modelAuth.php');
-require_once ('controllers/controller.php');
 
 function inscription()
 {
-    if(isset($_POST['formulInscription']))    
+    if(isset($_POST['formulInscription']) AND isset($_POST['pseudo'])AND isset($_POST['pass']) AND isset($_POST['pass2']) AND isset($_POST['mail']) AND isset($_POST['mail2']))
     {
         $pseudo = htmlspecialchars($_POST['pseudo']);
         $pass = htmlspecialchars($_POST['pass']);   
@@ -19,13 +16,14 @@ function inscription()
                 $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
                 if($pass == $pass2)
                 {
-                    if (pseudoCheck($pseudo)== 0) 
+                    $model = new ModelAuth();
+                    if ($model ->pseudoCheck($pseudo)== 0) 
                     {
-                        if (emailCheckInsciption($mail)== 0)
+                        if ($model ->emailCheckInsciption($mail)== 0)
                         {
                             if(strlen($pseudo)<=255)
                             {
-                                addUser($pseudo, $pass_hache, $mail);
+                                $model ->addUser($pseudo, $pass_hache, $mail);
                                 $accept='Votre compte a été créé avec succés ! Connectez-vous';                            
                             }
                             else
@@ -79,13 +77,14 @@ function connection()
 }
 function connectionSend()
 {
-    if(isset($_POST['formulConnect']))   
+    if(isset($_POST['formulConnect']) AND isset($_POST['mailConnect']) AND isset($_POST['passConnect']))   
     {
         $mailConnect = htmlspecialchars($_POST['mailConnect']);
         $passConnect = htmlspecialchars($_POST['passConnect']);   
         if(!empty($_POST['mailConnect']) AND !empty($_POST['passConnect']))
         {
-            $user = emailCheckConnection($mailConnect);
+            $model = new ModelAuth();
+            $user = $model ->emailCheckConnection($mailConnect);
             // vérif le pass
             if (!$user) 
             {

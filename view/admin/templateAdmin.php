@@ -1,9 +1,9 @@
 <?php require ("view/require/head.php"); ?>     
-    <nav class="navbar navbar-light navbar-expand-lg border-bottom shadow" style="background-color: #e3f2fd;">
-      <div class="container">
-          <h5 class="font-weight-bold font-italic ">FORTEROCHE Jean</br><small>Auteur et écrivain</small></h5>
-      </div>
-    </nav>
+  <nav class="navbar navbar-light navbar-expand-lg border-bottom shadow" style="background-color: #e3f2fd;">
+    <div class="container">
+        <h5 class="font-weight-bold font-italic ">FORTEROCHE Jean<br><small>Auteur et écrivain</small></h5>
+    </div>
+  </nav>
 <body class="bg-light">
   <div class="container-fluid">
     <div class="row">

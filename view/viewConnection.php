@@ -4,7 +4,6 @@
   <div class="jumbotron">
     <h4 class="text-center pb-3 pt-5 ">CONNECTION</h4>
     <?php 
-      
       if(isset($message))
     {
       

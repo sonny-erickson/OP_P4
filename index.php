@@ -3,6 +3,10 @@ session_start();
 require_once ('controllers/controller.php');
 require_once ('controllers/controllerAuth.php');
 require_once ('controllers/controllerAdmin.php');
+require_once ('models/Manager.php');
+require_once ('models/model.php');
+require_once ('models/modelAuth.php');
+require_once ('models/modelAdmin.php');
 
 try
 {
@@ -12,7 +16,7 @@ try
 		{
 			home();
 		}
-		else if($_GET['page'] === 'post')
+		else if($_GET['page'] === 'post' AND isset($_GET['id']))
 		{
 			post($_GET['id']);
 		}
@@ -50,20 +54,20 @@ try
 		{
 			connection();
 		}
-		else if($_GET['page'] === 'deconnexion')
-		{
-			deconnexion();
-		}
 		else if($_GET['page'] === 'connectionSend')
 		{
 			connectionSend();
 		}
+		else if($_GET['page'] === 'deconnexion')
+		{
+			deconnexion();
+		}
 		else if($_GET['page'] === 'addComment')
 		{
-			addcomment($_GET['id'], $_POST['author'], $_POST['comment']);	
+			addcomment($_GET['id'], $_POST['comment']);	
 		}
 		//Accés aux pages si et seulement si Connecté !!
-		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND !empty($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
+		else if (isset($_SESSION['id_member']) AND !empty($_SESSION['id_member']) AND isset($_SESSION['pseudo']) AND !empty($_SESSION['pseudo']))
 		{
 			if ($_SESSION['rang'] == 1)
 			{
@@ -105,7 +109,7 @@ try
 			}		
 			else 
 			{
-				home();
+				throw new Exception("Erreur");
 			}
 		}
 		// else if($_GET['page'] === "route")
@@ -122,6 +126,6 @@ catch(Exception $e)
 { 
    $errorMessage = $e->getMessage();
    var_dump($errorMessage);
-   require ("index.php?page=error");
+   header ('Location: index.php?page=error');	
 }
 

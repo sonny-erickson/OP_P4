@@ -1,36 +1,22 @@
 <?php
-require_once ('models/model.php');
-require_once ('models/modelAuth.php');
-require_once ('models/modelAdmin.php');
-require_once ('controllers/controller.php');
-require_once ('controllers/controllerAuth.php');
 
-function profil()
-{
-    require 'view/admin/profilView.php';
-}
 function admin()
 {
-    $posts = getPosts();
+    $model = new Model();
+    $posts = $model -> getPosts();
     require 'view/admin/adminView.php';
 }
-function signalementAdmin()
-{   
-    $comments = signaleComments();
-    require 'view/admin/signalementAdminView.php';
-}
-
 function newArticle()
 {   
     if(isset($_POST['AddArticle']))    
     {
+        $modelAdmin = new ModelAdmin();
         $title = htmlspecialchars($_POST['titleArticle']);
         $content = htmlspecialchars_decode($_POST['contentArticle']);
         if (!empty($_POST['titleArticle']) AND !empty($_POST['contentArticle']))
         {
-            createPost($id, $title, $content,$date_created);
-            header("Location:index.php?page=admin&accept" .$accept="Article ajouté !");
-            $accept="Article ajouté !";
+            $modelAdmin -> createPost($id, $title, $content,$date_created);
+            header("Location:index.php?page=admin");
         }
         else
         {
@@ -39,18 +25,11 @@ function newArticle()
     }
     require 'view/admin/newArticleView.php';
 }
-function deleteArticle($id)
-{
-    if(isset($id) AND !empty($id))  
-    {
-        deletePost($id);
-        header("Location: index.php?page=admin&accept=".$accept);
-    }  
-}
 function editArticle($id)
 {
     extract($_GET);
-    $editArticle = getPost($id);
+    $model = new Model();
+    $editArticle = $model -> getPost($id);
     require ('view/admin/editView.php');
 }
 function editArticleSend()
@@ -60,7 +39,8 @@ function editArticleSend()
     {
         if(isset($id) AND !empty($id))
         {
-            editPost($id, $titleArticle, $contentArticle);
+            $modelAdmin = new ModelAdmin();
+            $modelAdmin -> editPost($id, $titleArticle, $contentArticle);
             header("Location: index.php?page=admin");
         }
         else 
@@ -69,11 +49,28 @@ function editArticleSend()
         }
     }
 }
+function deleteArticle($id)
+{
+    if(isset($id) AND !empty($id))  
+    {
+        $modelAdmin = new ModelAdmin();
+        $modelAdmin -> deletePost($id);
+        header("Location: index.php?page=admin");
+    }  
+}
+function signalementAdmin()
+{   
+    $modelAdmin = new ModelAdmin();
+    $comments =  $modelAdmin -> signaleComments();
+    require 'view/admin/signalementAdminView.php';
+}
+
 function approuverComm($id)
 {
         if(isset($id) AND !empty($id))
         {
-            approuverComment($id);
+            $modelAdmin = new ModelAdmin();
+            $modelAdmin -> approuverComment($id);
             header("Location: index.php?page=signalementAdmin");
         }
 }
@@ -81,7 +78,8 @@ function deleteComm($id)
 {
         if(isset($id) AND !empty($id))
         {
-            deleteComment($id);
+            $modelAdmin = new ModelAdmin();
+            $modelAdmin -> deleteComment($id);
             header("Location: index.php?page=signalementAdmin");
         }
         else

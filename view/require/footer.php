@@ -9,15 +9,15 @@
         <a href="#"><img src="assets/images/twitter-icon.png" alt="twitter"></a>
       </div>
     </div>
-    <p class="text-center text-light mb-0 pb-3 pt-3">Ce projet à été réalisé par Petot Sonny pour le projet 4 d'OpenClassroom </br> <a href="index.php?page=mention" class="text-warning">Mentions légales </a>
-    <?php
-    if(isset($_SESSION['id_member']) AND ($_SESSION['rang']== 1))
-    { ?>
-        <a href="index.php?page=admin" class="text-warning">- Administration</a>
+    <p class="text-center text-light mb-0 pb-3 pt-3">Ce projet à été réalisé par Petot Sonny pour le projet 4 d'OpenClassroom <br> <a href="index.php?page=mention" class="text-warning">Mentions légales </a>
+      <?php
+      if(isset($_SESSION['id_member']) AND ($_SESSION['rang']== 1))
+      { ?>
+      <a href="index.php?page=admin" class="text-warning">- Administration</a>
     </p>    
     <?php 
     } ?>
-    
+
   </div>
 </footer>
 

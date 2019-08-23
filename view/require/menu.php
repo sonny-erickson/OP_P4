@@ -3,7 +3,7 @@
   <div class="small_screen">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg border-bottom shadow">
       <div class="container">
-          <h5 class="font-weight-bold font-italic text-warning">FORTEROCHE Jean</br><small class="text-light">Auteur et écrivain</small></h5>
+          <h5 class="font-weight-bold font-italic text-warning">FORTEROCHE Jean<br><small class="text-light">Auteur et écrivain</small></h5>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -34,12 +34,12 @@
           </div>
         </div>
     </nav>		
-    <?php if(isset($_SESSION['id_member']) AND ($_SESSION['rang']== 0))
+    <?php if(isset($_SESSION['id_member']) AND $_SESSION['rang'] == 0)
     { ?>
-            <div class="container-fluid bg-warning text-center"> Bienvenue <?= $_SESSION['pseudo'] ?>. Vous êtes connecté, vous pouvez commenté</div>
+            <div class="container-fluid bg-warning text-center"> Bienvenue <?= $_SESSION['pseudo'] ?>. Vous êtes connecté, vous pouvez commenter</div>
     <?php 
     } ?>
-    <?php if(isset($_SESSION['id_member']) AND ($_SESSION['rang']== 1))
+    <?php if(isset($_SESSION['id_member']) AND $_SESSION['rang'] == 1)
     { ?>
             <div class="container-fluid bg-warning text-center"> Bienvenue ADMIN</div>
     <?php 

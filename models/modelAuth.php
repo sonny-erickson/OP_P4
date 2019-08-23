@@ -1,37 +1,40 @@
 <?php
 // INSCRIPTION PAGE
-// check pseudo and mail un db for inscription
-function pseudoCheck($pseudo)
+class ModelAuth extends Manager
 {
-    $db = dbConnect();
-    $req = $db ->prepare('SELECT * FROM member WHERE pseudo = ?');
-    $req -> execute(array($pseudo));
-    $result = $req -> rowcount();
-    return $result;
-}
-function emailCheckInsciption($email)
-{
-    $db = dbConnect();
-    $req = $db ->prepare('SELECT * FROM member WHERE email = ?');
-    $req -> execute(array($email));
-    $result = $req -> rowcount();
-    return $result;
-}
-// add user
-function addUser($pseudo, $pass_hache, $mail)
-{   
-    $db = dbConnect();
-    $req = $db->prepare('INSERT INTO member(pseudo, pass, email, inscription_date) VALUES(:pseudo, :pass, :email, CURDATE())');
-    $req->execute(array('pseudo' => $pseudo,
-                        'pass' => $pass_hache,
-                        'email' => $mail));
-}
-// check email in bd
-function emailCheckConnection($mailConnect)
-{
-    $db = dbConnect();
-    $req = $db -> prepare ('SELECT * FROM member WHERE email = :email');
-    $req -> execute(array('email' => $mailConnect));
-    $result = $req -> fetch();
-    return $result;
+        // check pseudo and mail un db for inscription
+    public function pseudoCheck($pseudo)
+    {
+        $db = $this -> dbConnect();
+        $req = $db ->prepare('SELECT * FROM member WHERE pseudo = ?');
+        $req -> execute(array($pseudo));
+        $result = $req -> rowcount();
+        return $result;
+    }
+    public function emailCheckInsciption($email)
+    {
+        $db = $this -> dbConnect();
+        $req = $db ->prepare('SELECT * FROM member WHERE email = ?');
+        $req -> execute(array($email));
+        $result = $req -> rowcount();
+        return $result;
+    }
+    // add user
+    public function addUser($pseudo, $pass_hache, $mail)
+    {   
+        $db = $this -> dbConnect();
+        $req = $db->prepare('INSERT INTO member(pseudo, pass, email, inscription_date) VALUES(:pseudo, :pass, :email, CURDATE())');
+        $req->execute(array('pseudo' => $pseudo,
+                            'pass' => $pass_hache,
+                            'email' => $mail));
+    }
+    // check email in bd
+    public function emailCheckConnection($mailConnect)
+    {
+        $db = $this -> dbConnect();
+        $req = $db -> prepare ('SELECT * FROM member WHERE email = :email');
+        $req -> execute(array('email' => $mailConnect));
+        $result = $req -> fetch();
+        return $result;
+    }
 }

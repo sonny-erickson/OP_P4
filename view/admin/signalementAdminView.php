@@ -22,7 +22,7 @@
 				<tbody>
 					<tr>
 					<th scope="row"><?= (substr(strip_tags($comment['comment']),0,30)). '...'; ?></th>
-					<td><?= $comment['author']; ?></td>
+					<td><?= $comment['pseudo']; ?></td>
 					<td><?= $comment['post_id']; ?></td>
 					<td>
 						<button type="button" class="btn btn-primary btn-sm mt-1" id="adminButton"><a class="text-light" href="index.php?page=approuverComm&amp;id=<?= $comment['id']?>">Approuver</a></button>

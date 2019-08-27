@@ -1,7 +1,7 @@
 
 <footer>
   <div class="container-fluid bg-dark">
-    <h5 class="pt-3 text-center text-light border-bottom border-light">Vous pouvez aussi me suivre sur  :</h4>     
+    <h5 class="pt-3 text-center text-light border-bottom border-light">Vous pouvez aussi me suivre sur  :</h5>     
     <div class="row">
       <div class=" offset-md-4 col-md-4 offset-md-4 d-flex justify-content-center">
         <a href="#"><img src="assets/images/facebook-icon.png" alt="facebook"></a>

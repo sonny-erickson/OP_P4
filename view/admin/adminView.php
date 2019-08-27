@@ -29,8 +29,8 @@
 					<td><?= $contentExtrait; ?></td>
 					<td> <?= htmlspecialchars($post['date_created']); ?></td>
 					<td>
-						<button type="button" class="btn btn-primary btn-sm mt-1" id="adminButton"><a class="text-light" href="index.php?page=editArticle&amp;id=<?= $post['id']?>">Modifier</a></button>
-						<button type="button" class="btn btn-danger btn-sm mt-1" id="adminButton" onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Effacer</a></button>
+					<a class="btn btn-primary btn-sm mt-1" style="width: 75px;height: 31px;font-size: 13px;"  href="index.php?page=editArticle&amp;id=<?= $post['id']?>">Modifier</a>
+					<a class="btn btn-danger btn-sm mt-1"  style="width: 75px;height: 31px;font-size: 13px;" onclick =" return confirm('Etes-vous sûr ?')" href="index.php?page=deleteArticle&amp;id=<?= $post['id']?>">Effacer</a>
 					</td>
 					</tr>
 				</tbody>

@@ -2,7 +2,7 @@
 <?php ob_start() ?>
   <div class="contact container text-light">
     <h3 class="text-center pt-3 mb-2">Laissez-moi un message : </h3>
-    <form action="index.php?page=home" method="post" class="mt-5 mb-5" role="form">                  
+    <form action="index.php?page=home" method="post" class="mt-5 mb-5">                  
       <div class="form-group">
         <label for="name">Votre nom</label>
         <input type="text" class="form-control mb-2" name="name" id="name" value="">

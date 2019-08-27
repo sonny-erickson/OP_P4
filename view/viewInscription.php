@@ -12,7 +12,7 @@
         echo '<div class="container alert alert-success text-center" role="alert">'.$accept.'<a href="index.php?page=connection" class="badge badge-danger ml-2"> ICI </a></div>';
       }
       ?>
-    <form method="post" action="">
+    <form method="post">
         <div class="row d-flex justify-content-center">
           <div class="form-group pb-1">
             <label for="pseudo">Pseudo</label>
@@ -34,13 +34,13 @@
         <div class="row d-flex justify-content-center">
           <div class="form-group pb-1">
             <label for="mail">Adresse Mail</label>
-            <input type="email" class="form-control" name="mail" id="mail" aria-describedby="emailHelp" placeholder="Entrez votre mail" value="<?php if(isset($mail)) {echo $mail;} ?>" required>
+            <input type="email" class="form-control" name="mail" id="mail"  placeholder="Entrez votre mail" value="<?php if(isset($mail)) {echo $mail;} ?>" required>
           </div>
         </div>
         <div class="row d-flex justify-content-center">
           <div class="form-group pb-1">
             <label for="mail2">Confirmation Adresse Mail</label>
-            <input type="email" class="form-control" name="mail2" id="mail2" aria-describedby="emailHelp" placeholder="Entrez votre mail" required>
+            <input type="email" class="form-control" name="mail2" id="mail2"  placeholder="Entrez votre mail" required>
           </div>
         </div>
         <div class="row d-flex justify-content-center pb-1">

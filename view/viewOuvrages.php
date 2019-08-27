@@ -7,6 +7,7 @@
   </header>
   <div class="porto container mt-5">
     <section class="bg-warning p-2 rounded-lg ">
+      <h3 class="d-flex justify-content-center">Livre n°1</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre01.jpg" class="mt-2" alt="livre01">
       </div>
@@ -18,6 +19,7 @@
       </article>
     </section>
     <section class="bg-light p-2 mt-2 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°2</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre02.jpg" class="mt-2" alt="livre02">
       </div>
@@ -29,6 +31,7 @@
       </article>
     </section> 
     <section class="bg-warning p-2 mt-2 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°3</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre03.jpg" class="mt-2" alt="livre03">
       </div>
@@ -40,6 +43,7 @@
       </article>
     </section>
     <section class="bg-light p-2 mt-2 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°4</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre04.jpg" class="mt-2" alt="livre04">
       </div>
@@ -51,6 +55,7 @@
       </article>
     </section>
     <section class="bg-warning p-2 mt-2 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°5</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre05.jpg" class="mt-2" alt="livre05">
       </div>
@@ -62,6 +67,7 @@
       </article>
     </section>
     <section class="bg-light p-2 mt-2 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°6</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre06.jpg" class="mt-2 " alt="livre06">
       </div>
@@ -73,6 +79,7 @@
       </article>
     </section>
     <section class="bg-warning p-2 mt-2 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°7</h3>
       <div  class="d-flex justify-content-center">
         <img src="assets/images/livre07.jpg" class="mt-2 " alt="livre07">
       </div>
@@ -84,6 +91,7 @@
       </article>
     </section>
     <section class="bg-light p-2 mt-2 mb-5 rounded-lg">
+      <h3 class="d-flex justify-content-center">Livre n°8</h3>
       <div class="d-flex justify-content-center">
         <img src="assets/images/livre08.jpg" class="mt-2" alt="livre08">
       </div>

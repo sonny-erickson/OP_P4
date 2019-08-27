@@ -14,7 +14,7 @@
       <div class="row d-flex justify-content-center">
         <div class="form-group pb-2">
           <label for="exampleInputEmail1">Adresse Mail</label>
-          <input type="email" name="mailConnect"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre identifiant" >
+          <input type="email" name="mailConnect" class="form-control" id="exampleInputEmail1" placeholder="Entrez votre identifiant" >
         </div>
       </div>
       <div class="row d-flex justify-content-center pb-3">

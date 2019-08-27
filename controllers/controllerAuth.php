@@ -24,7 +24,7 @@ function inscription()
                             if(strlen($pseudo)<=255)
                             {
                                 $model ->addUser($pseudo, $pass_hache, $mail);
-                                $accept='Votre compte a été créé avec succés ! Connectez-vous';                            
+                                Header("Location:index.php?page=connection");                            
                             }
                             else
                             {

@@ -11,7 +11,7 @@
         <div class="container">
 	        <h2 class="text-light">Voici les articles</h2>
 	        <?php foreach ($posts as $post):?>
-	        <h4 class="text-warning border-top border-bottom mt-3 mb-3  text-center" ><strong><?= htmlspecialchars($post['title']);?></strong></a> le <?= htmlspecialchars($post['date_created']); ?></h4>
+	        <h4 class="text-warning border-top border-bottom mt-3 mb-3  text-center" ><strong><?= htmlspecialchars($post['title']);?></strong> le <?= htmlspecialchars($post['date_created']); ?></h4>
 	        <div class="text-light text-justify"> 
                 <img src="assets/images/articleimg.jpg" alt="articleimg">
                 <p>

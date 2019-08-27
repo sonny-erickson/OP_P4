@@ -21,15 +21,14 @@
 				?>
 				<tbody>
 					<tr>
-					<th scope="row"><?= (substr(strip_tags($comment['comment']),0,30)). '...'; ?></th>
-					<td><?= $comment['pseudo']; ?></td>
-					<td><?= $comment['post_id']; ?></td>
-					<td>
-						<button type="button" class="btn btn-primary btn-sm mt-1" id="adminButton"><a class="text-light" href="index.php?page=approuverComm&amp;id=<?= $comment['id']?>">Approuver</a></button>
-						<button type="button" class="btn btn-danger btn-sm mt-1" id="adminButton" onclick =" return confirm('Etes-vous sûr ?')"><a class="text-light" href="index.php?page=deleteComm&amp;id=<?= $comment['id']?>">Effacer</a></button>
-					</td>
+						<th scope="row"><?= (substr(strip_tags($comment['comment']),0,30)). '...'; ?></th>
+						<td><?= $comment['pseudo']; ?></td>
+						<td><?= $comment['post_id']; ?></td>
+						<td>
+							<a class="btn btn-primary btn-sm mt-1" style="width: 75px;height: 31px;font-size: 12px;" href="index.php?page=approuverComm&amp;id=<?= $comment['id']?>">Approuver</a>
+							<a class="btn btn-danger btn-sm mt-1" style="width: 75px;height: 31px;font-size: 13px;" onclick =" return confirm('Etes-vous sûr ?')" href="index.php?page=deleteComm&amp;id=<?= $comment['id']?>">Effacer</a>
+						</td>
 					</tr>
-					<tr>
 				</tbody>
 				<?php endforeach; ?>
 				</table>

@@ -1,11 +1,9 @@
-<?php 
-	require("require/head.php");
-    require("require/menu.php");
-?>     
+<?php require("require/head.php"); ?>
 <body class="bg-secondary">
+    <?php require("require/menu.php");?>  
     <?= $content ?>
-</body>
-<?php   
-	require("require/footer.php"); 
+    <?php
+    require("require/footer.php");
     require("require/script.php"); 
-?>
+    ?>  
+</body>

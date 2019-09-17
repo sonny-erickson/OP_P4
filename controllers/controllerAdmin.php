@@ -54,7 +54,6 @@ function deleteArticle($id)
     if(isset($id) AND !empty($id))  
     {
         $modelAdmin = new ModelAdmin();
-        $modelAdmin -> deleteComment($id);
         $modelAdmin -> deletePost($id);
         header("Location: index.php?page=admin");
     }  

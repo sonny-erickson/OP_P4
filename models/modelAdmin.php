@@ -25,8 +25,13 @@ class ModelAdmin extends Manager
 	public function deletePost($id)
 	{
 		$db = $this -> dbConnect();
+
+		$req = $db->prepare('DELETE FROM comments WHERE post_id = ?');
+		$req->execute(array($id));
+
 		$req = $db-> prepare('DELETE FROM billets WHERE id = ?');
 		$req -> execute(array($id));
+		
 		return $result;
 	}
 
